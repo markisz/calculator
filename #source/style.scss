@@ -1,0 +1,153 @@
+//<МИКСИНЫ>================================================================
+@mixin fontz($f) {
+	font-size: $f+px
+}
+
+//</МИКСИНЫ================================================================
+
+//<Файл обнуляющих стилей>=================================================
+@import "nullstyle.scss";
+//</Файл обнуляющих стилей>================================================
+
+///<ШРИФТЫ>=================================================================
+
+//<ПОДКЛЮЧЕНИЯ ШРИФТОВ>====================================================
+
+//</ПОДКЛЮЧЕНИЯ ШРИФТОВ>===================================================
+
+//<ШРИФТЫ ПО УМОЛЧАНИЮ>====================================================
+$fontfamily: Arial, "Helvetica Neue", Helvetica, sans-serif;
+//</ШРИФТЫ ПО УМОЛЧАНИЮ>===================================================
+
+///</ШРИФТЫ>================================================================
+
+//<ПЕРЕМЕННЫЕ>=============================================================
+$mw: 1180;
+//</ПЕРЕМЕННЫЕ>============================================================
+
+//<ОБОЛОЧКА>===============================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+//</ОБОЛОЧКА>==============================================================
+
+//<ОСНОВНАЯ СЕТКА>=========================================================
+.container {
+	max-width: $mw+px;
+	margin: 0px auto;
+	width: 100%;
+}
+
+body {
+	font-family: $fontfamily;
+	background: rgb(0, 212, 255);
+	background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(211, 255, 9, 1) 100%, rgba(165, 102, 43, 1) 100%);
+}
+
+//</ОСНОВНАЯ СЕТКА>========================================================
+
+//<ОСНОВНОЙ БЛОК>==========================================================
+.calculator {
+	margin: 50px 0;
+	padding: 30px 40px;
+
+	display: flex;
+	flex-basis: 400px;
+
+	height: 540px;
+
+	border: 1px solid rgba(255, 255, 255, 0.01);
+	background-color: rgba(255, 255, 255, 0.30);
+	border-radius: 20px;
+}
+
+.screen {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+
+	color: #232323;
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 4px 330px rgba(35, 35, 35, 0.01);
+
+	border: 1px solid rgba(255, 255, 255, 0.01);
+	border-radius: 16px;
+
+	overflow: hidden;
+	@include fontz(35);
+
+	padding: 20px;
+	text-align: right;
+	
+	width: 326px;
+}
+
+
+
+
+.calc-buttons {
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		
+		
+		margin: 5% 0;
+	}
+
+	&__btn {
+		backdrop-filter: blur(5.5px);
+		-webkit-backdrop-filter: blur(5.5px);
+		background-color: rgba(255,255,255, 0.75);
+		color: #232323;
+
+		border: 1px solid rgba(255,255,255, 0.1);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(35,35,35, 0.1);
+
+		flex-basis: 20%;
+
+		font-family: inherit;
+		font-size: 24px;
+
+		height: 65px;
+		&:hover{
+			background-color: inherit;
+		}
+		
+		&:last-child{
+			//backdrop-filter: blur(5.5px);
+			//-webkit-backdrop-filter: blur(5.5px);
+			
+			color: #fff;
+			background-color: #d72880;
+			
+			//border: 1px solid rgba(255,255,255, 0.1);
+			//border-radius: 16px;
+			box-shadow: 0 4px 30px rgba(35,35,35, 0.1);
+		}
+		&:last-child:hover{
+			background-color: inherit;
+			color: #000;
+		}
+		&:last-child:active{
+			background-color:  #ff9f32;
+		}
+		&:active{
+			background-color:  #ffef78;
+		}
+	}
+}
+.double {
+	flex-basis: 47%;
+ }
+ 
+.triple{
+	 flex-basis: 73%;
+ }
+
+//</ОСНОВНОЙ БЛОК>=========================================================
